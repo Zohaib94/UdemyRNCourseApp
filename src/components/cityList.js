@@ -1,8 +1,8 @@
 import React from 'react';
-import { FlatList, View } from 'react-native';
+import { FlatList, View, StyleSheet } from 'react-native';
 import CityListItem from './cityListItem';
 
-const cityInput = (props) => {
+const cityList = (props) => {
   citiesList = props.cities.map((city, index) => {
     return {
       key: index,
@@ -11,9 +11,18 @@ const cityInput = (props) => {
   });
 
   return(
-    <FlatList data={ citiesList }
-              renderItem={ ({ item }) => <CityListItem cityItem={ item } /> } />
+      <FlatList
+        data={ citiesList }
+        renderItem={ ({ item }) => <CityListItem cityItem={ item } /> }
+        style={ styles.listContainer }
+      />
   );
 }
 
-export default cityInput;
+const styles = StyleSheet.create({
+  listContainer: {
+    width: "100%"
+  }
+});
+
+export default cityList;

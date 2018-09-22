@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as placeActions from '../store/actions/placesActions';
 import CityInput from '../components/cityInput';
 import CityList from '../components/cityList';
-import { View } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 
 class CityListContainer extends Component {
   textChanged = (text) => {
@@ -20,7 +20,7 @@ class CityListContainer extends Component {
 
   render(){
     return(
-      <View>
+      <View style={ styles.container }>
         <CityInput textChangeHandler={ this.textChanged }
                    buttonPressHandler={ this.buttonPressed }
                    inputValue={ this.props.placeText } />
@@ -43,5 +43,15 @@ const mapDispatchToProps = dispatch => {
     onTextChange: (text) => dispatch(placeActions.updatePlaceText(text))
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 26,
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "flex-start"
+  }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(CityListContainer);

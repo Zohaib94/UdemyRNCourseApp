@@ -1,12 +1,25 @@
 import React from 'react';
-import { TouchableOpacity, Text } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
-const cityInput = (props) => {
+const cityListItem = (props) => {
   return(
     <TouchableOpacity onPress={() => console.log(props.key)}>
-      <Text>{props.cityName}</Text>
+      <View style={ styles.listItem }>
+        <Text>{ props.cityItem.cityName }</Text>
+      </View>
     </TouchableOpacity>
   );
 }
 
-export default cityInput;
+const styles = StyleSheet.create({
+  listItem: {
+    width: "100%",
+    marginBottom: 5,
+    padding: 10,
+    backgroundColor: "#eee",
+    flexDirection: "row",
+    alignItems: "center"
+  }
+});
+
+export default cityListItem;
