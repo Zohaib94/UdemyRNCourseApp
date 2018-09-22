@@ -25,7 +25,6 @@ dependencies: \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Views/RCTComponent.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Views/SafeAreaView/RCTSafeAreaShadowView.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Views/RCTShadowView.h \
-  /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Views/RCTLayout.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Base/RCTRootView.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Views/SafeAreaView/RCTSafeAreaView.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/Views/RCTView.h \

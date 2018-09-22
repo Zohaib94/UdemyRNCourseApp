@@ -387,13 +387,11 @@ dependencies: \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/json.h \
   /Users/square63/www/rn/UdemyCourseApp/ios/build/Build/Products/Debug-iphonesimulator/include/jschelpers/JSCHelpers.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/JSBigString.h \
-  /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/JSBundleType.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/MessageQueueThread.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/MethodCall.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/RAMBundleRegistry.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/../ReactCommon/cxxreact/JSModulesUnbundle.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/RecoverableError.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/ReactCommon/cxxreact/SystraceSection.h \
-  /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/../ReactCommon/cxxreact/JSIndexedRAMBundle.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/Memory.h \
   /Users/square63/www/rn/UdemyCourseApp/node_modules/react-native/React/../third-party/folly-2016.09.26.00/folly/MoveWrapper.h
