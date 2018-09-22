@@ -9,7 +9,7 @@ const cityInput = (props) => {
         onChangeText={ (text) => props.textChangeHandler(text) }
         placeholder='Please enter city name'
       />
-      <Button title='Add' onPress={ props.buttonPressHandler } />
+      <Button title='Add' onPress={ () => props.buttonPressHandler() } />
     </View>
   );
 }

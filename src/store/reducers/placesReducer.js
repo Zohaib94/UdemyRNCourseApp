@@ -12,7 +12,7 @@ const places = (state = initialState, action) => {
       return state
     case Types.ADD_PLACE:
       return ({ ...state,
-        placesList: state.placesList.concat(action.placeName),
+        placesList: state.placesList.concat(state.placeText),
       });
     case Types.REMOVE_PLACE:
       return ({ ...state,

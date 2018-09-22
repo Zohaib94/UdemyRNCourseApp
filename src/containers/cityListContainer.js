@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as placeActions from '../store/actions/placesActions';
 import CityInput from '../components/cityInput';
+import CityList from '../components/cityList';
 import { View } from 'react-native';
 
 class CityListContainer extends Component {
@@ -14,7 +15,7 @@ class CityListContainer extends Component {
       return;
     }
 
-    this.props.onAddPlace(this.props.placeText);
+    this.props.onAddPlace();
   }
 
   render(){
@@ -23,6 +24,7 @@ class CityListContainer extends Component {
         <CityInput textChangeHandler={ this.textChanged }
                    buttonPressHandler={ this.buttonPressed }
                    inputValue={ this.props.placeText } />
+        <CityList cities={ this.props.placesList } />
       </View>
     );
   }
@@ -30,13 +32,14 @@ class CityListContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    placeText: state.placeText
+    placeText: state.places.placeText,
+    placesList: state.places.placesList
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    onAddPlace: (name) => dispatch(placeActions.addPlace(name)),
+    onAddPlace: () => dispatch(placeActions.addPlace()),
     onTextChange: (text) => dispatch(placeActions.updatePlaceText(text))
   }
 }

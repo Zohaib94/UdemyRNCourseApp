@@ -1,9 +1,8 @@
 import * as Types from './types';
 
-export const addPlace = (placeName) => {
+export const addPlace = () => {
   return {
-    type: Types.ADD_PLACE,
-    newPlace: placeName
+    type: Types.ADD_PLACE
   }
 }
 
