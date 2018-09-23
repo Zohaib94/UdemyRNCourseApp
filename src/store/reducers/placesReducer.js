@@ -16,7 +16,9 @@ const places = (state = initialState, action) => {
       });
     case Types.REMOVE_PLACE:
       return ({ ...state,
-        placesList: state.placesList.filter((place) => { place.key !== state.currentPlace.key }),
+        placesList: state.placesList.filter((place, index) => {
+          return index !== state.currentPlace.keyIndex
+        }),
         currentPlace: null
       });
     case Types.DESELECT_PLACE:
@@ -25,7 +27,10 @@ const places = (state = initialState, action) => {
       });
     case Types.SELECT_PLACE:
       return ({ ...state,
-        currentPlace: state.placesList.filter((place) => { place.key === action.index })
+        currentPlace: {
+          city: state.placesList[action.placeIndex],
+          keyIndex: action.placeIndex
+        }
       });
     case Types.PLACE_TEXT_UPDATE:
       return ({ ...state,

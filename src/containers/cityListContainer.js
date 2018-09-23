@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import * as placeActions from '../store/actions/placesActions';
 import CityInput from '../components/cityInput';
 import CityList from '../components/cityList';
+import CityModal from '../components/cityModal';
 import { View, StyleSheet } from 'react-native';
 
 class CityListContainer extends Component {
@@ -19,7 +20,15 @@ class CityListContainer extends Component {
   }
 
   cityListItemPressed = (index) => {
-    this.props.onSelectPlace(index)
+    this.props.onSelectPlace(index);
+  }
+
+  deletePressed = () => {
+    this.props.onDeletePlace();
+  }
+
+  closePressed = () => {
+    this.props.onDeselectPlace();
   }
 
   render(){
@@ -30,6 +39,9 @@ class CityListContainer extends Component {
                    inputValue={ this.props.placeText } />
         <CityList cities={ this.props.placesList }
                   cityPressHandler={ this.cityListItemPressed } />
+        <CityModal deletePressHandler={ this.deletePressed }
+                   closePressHandler={ this.closePressed }
+                   cityData={ this.props.selectedPlace } />
       </View>
     );
   }
@@ -38,7 +50,8 @@ class CityListContainer extends Component {
 const mapStateToProps = state => {
   return {
     placeText: state.places.placeText,
-    placesList: state.places.placesList
+    placesList: state.places.placesList,
+    selectedPlace: state.places.currentPlace
   }
 }
 
@@ -46,7 +59,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onAddPlace: () => dispatch(placeActions.addPlace()),
     onTextChange: (text) => dispatch(placeActions.updatePlaceText(text)),
-    onSelectPlace: (index) => dispatch(placeActions.selectPlace(index))
+    onSelectPlace: (index) => dispatch(placeActions.selectPlace(index)),
+    onDeletePlace: () => dispatch(placeActions.removePlace()),
+    onDeselectPlace: () => dispatch(placeActions.deselectPlace())
   }
 }
 
