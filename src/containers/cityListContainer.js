@@ -18,13 +18,18 @@ class CityListContainer extends Component {
     this.props.onAddPlace();
   }
 
+  cityListItemPressed = (index) => {
+    this.props.onSelectPlace(index)
+  }
+
   render(){
     return(
       <View style={ styles.container }>
         <CityInput textChangeHandler={ this.textChanged }
                    buttonPressHandler={ this.buttonPressed }
                    inputValue={ this.props.placeText } />
-        <CityList cities={ this.props.placesList } />
+        <CityList cities={ this.props.placesList }
+                  cityPressHandler={ this.cityListItemPressed } />
       </View>
     );
   }
@@ -40,7 +45,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     onAddPlace: () => dispatch(placeActions.addPlace()),
-    onTextChange: (text) => dispatch(placeActions.updatePlaceText(text))
+    onTextChange: (text) => dispatch(placeActions.updatePlaceText(text)),
+    onSelectPlace: (index) => dispatch(placeActions.selectPlace(index))
   }
 }
 

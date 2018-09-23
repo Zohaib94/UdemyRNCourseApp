@@ -3,7 +3,7 @@ import { TouchableOpacity, Text, StyleSheet, View } from 'react-native';
 
 const cityListItem = (props) => {
   return(
-    <TouchableOpacity onPress={() => console.log(props.key)}>
+    <TouchableOpacity onPress={ () => props.cityPressed(props.cityItem.key) }>
       <View style={ styles.listItem }>
         <Text>{ props.cityItem.cityName }</Text>
       </View>

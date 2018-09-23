@@ -13,7 +13,7 @@ const cityList = (props) => {
   return(
       <FlatList
         data={ citiesList }
-        renderItem={ ({ item }) => <CityListItem cityItem={ item } /> }
+        renderItem={ ({ item }) => <CityListItem cityItem={ item } cityPressed={ props.cityPressHandler } /> }
         style={ styles.listContainer }
       />
   );
