@@ -1,5 +1,8 @@
 import React from 'react';
-import { Modal, Text, Button, Image, View } from 'react-native';
+import { Modal, Text, Button, Image, View, TouchableOpacity } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+const deleteIcon = (<Icon name="trash" size={30} color="#900" />)
+const closeIcon = (<Icon name="times" size={30} color="#900" />)
 
 const cityModal = (props) => {
   let modalContent = null;
@@ -18,8 +21,12 @@ const cityModal = (props) => {
     <Modal visible={ props.cityData !== null }
            onRequestClose={ () => props.closePressHandler() } >
       {modalContent}
-      <Button title='Delete' onPress={ () => props.deletePressHandler() } />
-      <Button title='Close' onPress={ () => props.closePressHandler() } />
+      <TouchableOpacity onPress={ () => props.deletePressHandler() }>
+        {deleteIcon}
+      </TouchableOpacity>
+      <TouchableOpacity onPress={ () => props.closePressHandler() }>
+        {closeIcon}
+      </TouchableOpacity>
     </Modal>
   );
 }
