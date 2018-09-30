@@ -1,12 +1,16 @@
 import React from 'react';
-import { Modal, Text, Button } from 'react-native';
+import { Modal, Text, Button, Image, View } from 'react-native';
 
 const cityModal = (props) => {
   let modalContent = null;
 
   if (props.cityData !== null) {
     modalContent = (
-      <Text>{ props.cityData.city }</Text>
+      <View>
+        <Image source={ { uri: 'https://pbs.twimg.com/profile_images/491404645000962049/0n-I-pl-_400x400.png' } }
+               style={ { width: 400, height: 400 } } />
+        <Text>{ props.cityData.city }</Text>
+      </View>
     );
   }
 
