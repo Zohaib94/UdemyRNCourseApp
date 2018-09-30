@@ -1,10 +1,11 @@
-import React from 'react';
-import CityListContainer from './src/containers/cityListContainer'
+import { Navigation } from 'react-native-navigation';
+import AuthScreen from './src/screens/AuthScreen/Auth';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <CityListContainer/>
-    );
-  }
-}
+Navigation.registerComponent('UdemyCourseApp.AuthScreen', () => AuthScreen);
+
+Navigation.startSingleScreenApp({
+  screen: {
+    screen: 'UdemyCourseApp.AuthScreen',
+    title: 'Login',
+  },
+});
