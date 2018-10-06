@@ -2,7 +2,6 @@ import * as Types from '../actions/types';
 
 const initialState = {
   placesList: [],
-  currentPlace: null,
   placeText: ''
 }
 
@@ -18,19 +17,7 @@ const places = (state = initialState, action) => {
       return ({ ...state,
         placesList: state.placesList.filter((place, index) => {
           return index !== state.currentPlace.keyIndex
-        }),
-        currentPlace: null
-      });
-    case Types.DESELECT_PLACE:
-      return ({ ...state,
-        currentPlace: null
-      });
-    case Types.SELECT_PLACE:
-      return ({ ...state,
-        currentPlace: {
-          city: state.placesList[action.placeIndex],
-          keyIndex: action.placeIndex
-        }
+        })
       });
     case Types.PLACE_TEXT_UPDATE:
       return ({ ...state,

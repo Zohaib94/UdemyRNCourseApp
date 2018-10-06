@@ -19,16 +19,8 @@ class CityListContainer extends Component {
     this.props.onAddPlace();
   }
 
-  cityListItemPressed = (index) => {
-    this.props.onSelectPlace(index);
-  }
-
   deletePressed = () => {
     this.props.onDeletePlace();
-  }
-
-  closePressed = () => {
-    this.props.onDeselectPlace();
   }
 
   render(){
@@ -59,9 +51,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onAddPlace: () => dispatch(placeActions.addPlace()),
     onTextChange: (text) => dispatch(placeActions.updatePlaceText(text)),
-    onSelectPlace: (index) => dispatch(placeActions.selectPlace(index)),
     onDeletePlace: () => dispatch(placeActions.removePlace()),
-    onDeselectPlace: () => dispatch(placeActions.deselectPlace())
   }
 }
 
