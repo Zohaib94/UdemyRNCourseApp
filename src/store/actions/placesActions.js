@@ -6,9 +6,10 @@ export const addPlace = () => {
   }
 }
 
-export const removePlace = () => {
+export const removePlace = (key) => {
   return {
-    type: Types.REMOVE_PLACE
+    type: Types.REMOVE_PLACE,
+    key: key
   }
 }
 

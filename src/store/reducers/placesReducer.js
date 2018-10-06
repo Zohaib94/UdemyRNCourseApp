@@ -16,7 +16,7 @@ const places = (state = initialState, action) => {
     case Types.REMOVE_PLACE:
       return ({ ...state,
         placesList: state.placesList.filter((place, index) => {
-          return index !== state.currentPlace.keyIndex
+          return index !== action.key
         })
       });
     case Types.PLACE_TEXT_UPDATE:

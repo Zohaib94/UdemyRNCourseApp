@@ -12,7 +12,8 @@ class Find extends Component {
       title: currentCity,
       passProps: {
         cityData: {
-          city: currentCity
+          city: currentCity,
+          key: key
         }
       }
     })

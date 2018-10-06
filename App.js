@@ -10,7 +10,7 @@ const store = configureStore();
 Navigation.registerComponent('UdemyCourseApp.AuthScreen', () => AuthScreen, store, Provider);
 Navigation.registerComponent('UdemyCourseApp.FindScreen', () => FindScreen, store, Provider);
 Navigation.registerComponent('UdemyCourseApp.ShareScreen', () => ShareScreen, store, Provider);
-Navigation.registerComponent('UdemyCourseApp.DetailScreen', () => DetailScreen);
+Navigation.registerComponent('UdemyCourseApp.DetailScreen', () => DetailScreen, store, Provider);
 
 Navigation.startSingleScreenApp({
   screen: {
